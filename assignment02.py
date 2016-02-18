@@ -3,7 +3,6 @@
 
 import pandas as pd
 import numpy as np
-from sklearn.tree import DecisionTreeClassifier
 
 data = pd.read_csv('titanic.csv', index_col='PassengerId')
 
@@ -22,6 +21,7 @@ data_target = pd.DataFrame(data_cleaned, columns = ['Survived'])
 print(data_target)
 
 # обучение решаюшего дерева
+from sklearn.tree import DecisionTreeClassifier
 clf = DecisionTreeClassifier()
 clf.fit(data_limited,data_target)
 
